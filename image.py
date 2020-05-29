@@ -1,5 +1,5 @@
-from PIL import Image
+from PIL import Image, ImageFilter
 
 img = Image.open('./Pokedex/original.jpg')
-
-print(img.format)
+filtered_img = img.filter(ImageFilter.BoxBlur(30))
+filtered_img.save("blur.png",'png')
